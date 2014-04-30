@@ -1,11 +1,25 @@
 from pyquery import PyQuery as pq
 import requests
+import argparse
 import sys
 import time
+
+
+"""
+Submission for URAL: acm.timus.ru
+
+Put me into your problem solving folder for URAL. When I'm in the same folder with your solutions, 1023.cpp for example, then use
+
+python submit_ural.py 1023.cpp
+"""
 
 # configuration.
 judge_id = "74814MC"
 user_name = "masque"
+
+assert judge_id != "", "Configure me and type your JudgeID"
+assert judge_id != "", "Configure me and type your username"
+assert len(sys.argv)==2, "Usage: python submit_ural.py your_soution"
 
 language_mapping = {
         'cpp': 21,
@@ -14,16 +28,17 @@ language_mapping = {
         'rb': 18,
         }
 
+
 source_file_name = sys.argv[1]
 dot_position = source_file_name.find(".")
 
-if dot_position==-1:
-    raise('Invalid source file name...')
+assert dot_position!=-1,  "Invalid source file... I cannot tell what kind of source file it is. Add a extension like xxx.cpp maybe?"
 
 name_extension = source_file_name[source_file_name.find(".")+1:]
 
-if name_extension not in language_mapping:
-    raise("Not supporting " + name_extension + "file yet... modify me please (it's easy!)")
+assert name_extension in language_mapping, "Not supporting for "+name_extension + " file yet. Modify me please (it's easy!)"
+
+assert all([s>='0' and s<='9' for s in source_file_name[:dot_position]]), "Your solution should be named after the problem number, like 1000.cpp"
 
 source = open(source_file_name, 'r').read()
 data = {'Source': source, 
@@ -86,12 +101,12 @@ while True:
             result_buf.append(current_jquery_obj.text()) 
     
     if not should_refresh:
-        print '\n\n'
+        print '\n'
         if result_buf[0].find("Accept")!=-1:
             print '->Congrats! Accepted!'
         else:
             print '->Not Accepted'
-        print '\n\n'
+        print '\n'
         print result_buf[0]
         break
 
