@@ -14,8 +14,8 @@ python submit_ural.py 1023.cpp
 """
 
 # configuration.
-judge_id = "74814MC"
-user_name = "masque"
+judge_id = ""
+user_name = ""
 
 assert judge_id != "", "Configure me and type your JudgeID"
 assert judge_id != "", "Configure me and type your username"
