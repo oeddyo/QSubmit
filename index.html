@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Qsubmit : Make quick submission to Online Judges - Save time for copy &amp; paste!" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Qsubmit</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/oeddyo/QSubmit">View on GitHub</a>
+
+          <h1 id="project_title">Qsubmit</h1>
+          <h2 id="project_tagline">Make quick submission to Online Judges - Save time for copy &amp; paste!</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/oeddyo/QSubmit/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/oeddyo/QSubmit/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-qsubmit" class="anchor" href="#welcome-to-qsubmit"><span class="octicon octicon-link"></span></a>Welcome to QSubmit.</h3>
+
+<p>I've been practicing programming contest problems for a while. However, I found copying my code, paste it onto the Online Judge, and then paste it is cumbersome. Needless to say wait there refresh until getting your final AC. </p>
+
+<p>These could be simplified!</p>
+
+<p>I'm writing a set of command line code to submit solutions to Online Judges automatically, and show results in a shot. It's super simple to use, and you definitely should try it out!</p>
+
+<p>What you need to do is simply copy the file into your problem solution folder, say ~/ural_solutions/. Then use your favorite text editor, change the two lines to your information</p>
+
+<pre><code> 16 # configuration.
+ 17 judge_id = ""
+ 18 user_name = ""
+</code></pre>
+
+<p>Then you could run the following command to submit a solution, and it would bring you back whether you have ac!</p>
+
+<pre><code>$ cd your_folder_for_problems
+$ python submit_ural.py your_problem.cpp
+</code></pre>
+
+<p>Shows:</p>
+
+<pre><code>$ python submit_ural.py 1306.cpp
+Posting source code...
+Succesfully posted your code... Waiting for result!
+[-----&gt; ]
+
+-&gt;Congrats! Accepted!
+
+
+5644210 01:53:32 1 May 2014 masque 1306 . Sequence Median G++ 4.7.2 Accepted 0.156 925 KB
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Qsubmit maintained by <a href="https://github.com/oeddyo">oeddyo</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-50548506-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
